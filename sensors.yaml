@@ -1,0 +1,8 @@
+- platform: bom
+  station: IDV60901.95936
+  name: Melbourne
+  monitored_conditions:
+    - weather
+    - rain_trace
+    - air_temp
+    - apparent_t

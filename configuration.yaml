@@ -1,0 +1,50 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+homeassistant:
+  customize: !include customize.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+frontend:
+  themes: !include_dir_merge_named themes
+
+device_tracker:
+  - platform: nmap_tracker
+    hosts: 192.168.20.0/24
+    interval_seconds: 30
+    consider_home: 360
+    new_device_defaults:
+      track_new_devices: false
+
+tuya:
+  username: !secret tuya_username
+  password: !secret tuya_password
+  country_code: "61"
+
+light:
+  - platform: group
+    name: Living Room
+    entities:
+      - light.64824402cc50e3f1164c
+      - light.64824402cc50e3f124f4
+      - light.64824402cc50e3f148e6
+      
+camera:
+  - platform: bom
+    location: Melbourne
+weather:
+  !include weather.yaml
+sensor:
+  !include sensors.yaml
+discovery:
+  ignore:
+  enable:
