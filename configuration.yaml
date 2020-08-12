@@ -37,7 +37,8 @@ light:
       - light.64824402cc50e3f1164c
       - light.64824402cc50e3f124f4
       - light.64824402cc50e3f148e6
-      
+shopping_list:
+  name: Common items
 camera:
   - platform: bom
     location: Melbourne
