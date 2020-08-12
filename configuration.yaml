@@ -33,7 +33,7 @@ tuya:
 shopping_list:
 camera:
   - platform: bom
-    location: Melbourne
+    location: Sydney
 weather:
   !include weather.yaml
 sensor:
