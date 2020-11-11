@@ -1,0 +1,35 @@
+esphome:
+  name: faxy_room_thermostat
+  platform: ESP32
+  board: esp-wrover-kit
+
+wifi:
+  ssid: "48Essexhousemates"
+  password: !secret wifi-password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Faxy Room Thermostat"
+    password: !secret ota-password
+
+captive_portal:
+
+# Enable logging
+logger:
+
+sensor:
+  - platform: dht
+    model: DHT11
+    pin: GPIO14
+    temperature:
+      name: "Living Room Temperature"
+    humidity:
+      name: "Living Room Humidity"
+    update_interval: 15s
+
+# Enable Home Assistant API
+api:
+  password: !secret ota-password
+
+ota:
+  password: !secret ota-password
