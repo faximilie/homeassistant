@@ -5,3 +5,10 @@ www/community/**
 www/community/
 appdaemon/**
 appdaemon/
+.HA_VERSION
+.shopping_list.json
+.storage/**
+.storage/
+core
+home-assistant.log
+home-assistant_v2.db
