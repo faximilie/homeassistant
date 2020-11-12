@@ -17,6 +17,10 @@ scene: !include scenes.yaml
 frontend:
   themes: !include_dir_merge_named themes
 
+  media_player:
+  - platform: epson
+    host: 192.168.1.132
+
 device_tracker:
   - platform: nmap_tracker
     hosts: 192.168.20.0/24
