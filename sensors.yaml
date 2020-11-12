@@ -1,22 +1,22 @@
-- platform: bom
-  station: IDN60901.94768
-  name: Sydney
-  monitored_conditions:
-    - weather
-    - rain_trace
-    - air_temp
-    - apparent_t
-- platform: bom_forecast
-  product_id: IDN10064
-  name: Sydney
-  forecast_days: 3
-  rest_of_today: True
-  friendly: True
-  friendly_state_format: '{min} to {max}, {summary}'
-  monitored_conditions:
-    - 'max'
-    - 'min'
-    - 'chance_of_rain'
-    - 'possible_rainfall'
-    - 'summary'
-    - 'detailed_summary'
+# - platform: bom
+#   station: IDN60901.94768
+#   name: Sydney
+#   monitored_conditions:
+#     - weather
+#     - rain_trace
+#     - air_temp
+#     - apparent_t
+# - platform: bom_forecast
+#   product_id: IDN10064
+#   name: Sydney
+#   forecast_days: 3
+#   rest_of_today: True
+#   friendly: True
+#   friendly_state_format: '{min} to {max}, {summary}'
+#   monitored_conditions:
+#     - 'max'
+#     - 'min'
+#     - 'chance_of_rain'
+#     - 'possible_rainfall'
+#     - 'summary'
+#     - 'detailed_summary'

@@ -36,9 +36,9 @@ tuya:
   country_code: "61"
 
 shopping_list:
-camera:
-  - platform: bom
-    location: Sydney
+# camera:
+#   - platform: bom
+#     location: Sydney
 weather:
   !include weather.yaml
 sensor:
