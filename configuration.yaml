@@ -15,6 +15,15 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
+
+history:
+  exclude:
+    entity_globs:
+     - sensor.oneplus_*
+     - sensor.faxy_s_phone*
+     - binary_sensor.oneplus_*
+     - binary_sensor.faxy_s_phone*
+     - person.faxy
 recorder:
 
 frontend:
