@@ -24,6 +24,7 @@ history:
      - binary_sensor.oneplus_*
      - binary_sensor.faxy_s_phone*
      - person.faxy
+     - device_tracker*
 recorder:
 
 frontend:
