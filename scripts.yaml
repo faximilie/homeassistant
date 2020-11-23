@@ -8,6 +8,7 @@ ac_cool:
     - service: input_select.select_option
       data:
         option: Cool
+      entity_id: input_select.ac_scene
 ac_heat:
   alias: AC heat
   icon: "hass:fire"
@@ -18,6 +19,7 @@ ac_heat:
     - service: input_select.select_option
       data:
         option: Heat
+      entity_id: input_select.ac_scene
 ac_dry:
   alias: AC dry
   icon: "hass:weather-sunny"
@@ -28,6 +30,7 @@ ac_dry:
     - service: input_select.select_option
       data:
         option: Dry
+      entity_id: input_select.ac_scene
 ac_toggle:
   alias: AC Power
   icon: "hass:power"
