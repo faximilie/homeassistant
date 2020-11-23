@@ -28,6 +28,14 @@ ac_dry:
     - service: input_select.select_option
       data:
         option: Dry
+ac_toggle:
+  alias: AC Power
+  icon: "hass:power"
+  sequence:
+    - service: climate.set_hvac_mode
+      data:
+        entity_id: climate.44054805840d8ea4bd2a
+        hvac_mode: '{{ "auto" if states("climate.44054805840d8ea4bd2a") == "off" else "off"}}'
 # ac_Fan:
 #   alias: AC Fan
 #   icon: "hass:fan"
