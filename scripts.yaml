@@ -1,5 +1,6 @@
 ac_cool:
   alias: AC Cool
+  icon: "hass:snowflake"
   sequence:
     - service: scene.turn_on
       data:
@@ -7,6 +8,33 @@ ac_cool:
     - service: input_select.select_option
       data:
         option: Cool
-
-
-        # dry scene.jfqswirlirvusyxz
+ac_heat:
+  alias: AC heat
+  icon: "hass:fire"
+  sequence:
+    - service: scene.turn_on
+      data:
+        entity_id: scene.pxbahpx0p8jgz5rg
+    - service: input_select.select_option
+      data:
+        option: Heat
+ac_dry:
+  alias: AC dry
+  icon: "hass:weather-sunny"
+  sequence:
+    - service: scene.turn_on
+      data:
+        entity_id: scene.jfqswirlirvusyxz
+    - service: input_select.select_option
+      data:
+        option: Dry
+# ac_Fan:
+#   alias: AC Fan
+#   icon: "hass:fan"
+#   sequence:
+#     - service: scene.turn_on
+#       data:
+#         entity_id: scene.jfqswirlirvusyxz
+#     - service: input_select.select_option
+#       data:
+#         option: Fan
