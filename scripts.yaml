@@ -35,6 +35,14 @@ ac_toggle:
   alias: AC Power
   icon: "hass:power"
   sequence:
+    - service: input_select.select_option
+      data:
+        option: '{{ states("input_select.ac_scene") if states("input_select.ac_power") == "Off" else "Off"}}'
+      entity_id: input_select.ac_scene
+    - service: input_select.select_option
+      data:
+        option: '{{ "On" if states("climate.44054805840d8ea4bd2a") == "off" else "Off"}}'
+      entity_id: input_select.ac_power
     - service: climate.set_hvac_mode
       data:
         entity_id: climate.44054805840d8ea4bd2a
