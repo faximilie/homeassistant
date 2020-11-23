@@ -42,10 +42,10 @@ ac_toggle:
     - service: input_select.select_option
       data:
         option: '{{ True if states("climate.44054805840d8ea4bd2a") == "auto" else False}}'
-      entity_id: input_select.ac_power
+      entity_id: input_select.ac_on
     - service: input_select.select_option
       data:
-        option: '{{ states("input_select.ac_scene") if states("input_select.ac_power") == True else "Off"}}'
+        option: '{{ states("input_select.ac_scene") if states("input_select.ac_on") else "Off"}}'
       entity_id: input_select.ac_scene
 # ac_Fan:
 #   alias: AC Fan
