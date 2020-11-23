@@ -27,6 +27,21 @@ history:
      - device_tracker*
 recorder:
 
+input_select:
+  ac_scene:
+    name: AC Mode
+    options:
+      - Heat
+      - Cool
+      - Dry
+      - Fan
+      - "Off"
+  ac_on:
+    name: AC power
+    options:
+      - On
+      - Off
+
 frontend:
   themes: !include_dir_merge_named themes
 
