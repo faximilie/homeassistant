@@ -110,8 +110,8 @@ switch:
 climate:
   - platform: dualmode_generic
     name: Faxys room
-    heater: scene.pxbahpx0p8jgz5rg
-    cooler: scene.u3hzqmwwvldx0nq5
+    heater: switch.aircon_heat
+    cooler: switch.aircon_cool
     target_sensor: sensor.faxy_s_room_temperature
 
 tuya:
