@@ -2,6 +2,10 @@ ac_cool:
   alias: AC Cool
   icon: "hass:snowflake"
   sequence:
+    - service: climate.set_hvac_mode
+      data:
+        entity_id: climate.44054805840d8ea4bd2a
+        hvac_mode: auto
     - service: scene.turn_on
       data:
         entity_id: scene.u3hzqmwwvldx0nq5
@@ -13,6 +17,10 @@ ac_heat:
   alias: AC heat
   icon: "hass:fire"
   sequence:
+    - service: climate.set_hvac_mode
+      data:
+        entity_id: climate.44054805840d8ea4bd2a
+        hvac_mode: auto
     - service: scene.turn_on
       data:
         entity_id: scene.pxbahpx0p8jgz5rg
@@ -24,6 +32,10 @@ ac_dry:
   alias: AC dry
   icon: "hass:weather-sunny"
   sequence:
+    - service: climate.set_hvac_mode
+      data:
+        entity_id: climate.44054805840d8ea4bd2a
+        hvac_mode: auto
     - service: scene.turn_on
       data:
         entity_id: scene.jfqswirlirvusyxz

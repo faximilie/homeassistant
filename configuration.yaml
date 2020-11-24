@@ -76,6 +76,44 @@ switch:
           data:
             entity_id: climate.44054805840d8ea4bd2a
             hvac_mode: 'off'
+      aircon_heat:
+        value_template: '{{is_state("input_select.ac_scene", "Cool")}}'
+        turn_on:
+          service: script.ac_cool
+        turn_off:
+          service: climate.set_hvac_mode
+          data:
+            entity_id: climate.44054805840d8ea4bd2a
+            hvac_mode: 'off'
+      aircon_dry:
+        value_template: '{{is_state("input_select.ac_scene", "Cool")}}'
+        turn_on:
+          service: script.ac_cool
+        turn_off:
+          service: climate.set_hvac_mode
+          data:
+            entity_id: climate.44054805840d8ea4bd2a
+            hvac_mode: 'off'
+      aircon_power:
+        value_template: '{{is_state("climate.44054805840d8ea4bd2a", "auto")}}'
+        turn_on:
+          service: climate.set_hvac_mode
+          data:
+            entity_id: climate.44054805840d8ea4bd2a
+            hvac_mode: 'auto'
+        turn_off:
+          service: climate.set_hvac_mode
+          data:
+            entity_id: climate.44054805840d8ea4bd2a
+            hvac_mode: 'off'
+
+climate:
+  - platform: dualmode_generic
+    name: Faxys room
+    heater: scene.pxbahpx0p8jgz5rg
+    cooler: scene.u3hzqmwwvldx0nq5
+    target_sensor: sensor.faxy_s_room_temperature
+
 tuya:
   username: !secret tuya_username
   password: !secret tuya_password
