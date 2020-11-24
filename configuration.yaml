@@ -68,7 +68,7 @@ switch:
   - platform: template
     switches:
       aircon_cool:
-        value_template: '{{is_state("input_select.ac_scene", "Cool")}}'
+        value_template: '{{is_state("input_select.ac_scene", "Cool") and is_state("climate.44054805840d8ea4bd2a", "auto")}}'
         turn_on:
           service: script.ac_cool
         turn_off:
@@ -77,7 +77,7 @@ switch:
             entity_id: climate.44054805840d8ea4bd2a
             hvac_mode: 'off'
       aircon_heat:
-        value_template: '{{is_state("input_select.ac_scene", "Cool")}}'
+        value_template: '{{is_state("input_select.ac_scene", "Heat") and is_state("climate.44054805840d8ea4bd2a", "auto")}}'
         turn_on:
           service: script.ac_cool
         turn_off:
@@ -86,7 +86,7 @@ switch:
             entity_id: climate.44054805840d8ea4bd2a
             hvac_mode: 'off'
       aircon_dry:
-        value_template: '{{is_state("input_select.ac_scene", "Cool")}}'
+        value_template: '{{is_state("input_select.ac_scene", "Dry" and is_state("climate.44054805840d8ea4bd2a", "auto"))}}'
         turn_on:
           service: script.ac_cool
         turn_off:
