@@ -55,7 +55,7 @@ vacuum:
     token: !secret xiaomi_vacuum_token
 camera:
   - platform: xiaomi_cloud_map_extractor
-    host: !secret 192.168.1.108
+    host: 192.168.1.108
     token: !secret xiaomi_vacuum_token
     username: !secret xiaomi_cloud_username
     password: !secret xiaomi_cloud_password
