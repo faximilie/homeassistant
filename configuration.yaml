@@ -64,6 +64,18 @@ device_tracker:
     new_device_defaults:
       track_new_devices: false
 
+switch:
+  - platform: template
+    switches:
+      aircon_cool:
+        value_template: '{{is_state("input_select.ac_scene", "Cool")}}'
+        turn_on:
+          service: script.ac_cool
+        turn_off:
+          service: climate.set_hvac_mode
+          data:
+            entity_id: climate.44054805840d8ea4bd2a
+            hvac_mode: 'off'
 tuya:
   username: !secret tuya_username
   password: !secret tuya_password
