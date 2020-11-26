@@ -28,13 +28,6 @@ history:
 recorder:
 
 input_select:
-  last_ac_scene:
-    name: Last AC before powercycle
-    options:
-      - Heat
-      - Cool
-      - Dry
-      - Fan
   ac_scene:
     name: AC Mode
     options:
@@ -42,7 +35,6 @@ input_select:
       - Cool
       - Dry
       - Fan
-      - "Off"
   ac_on:
     name: AC power
     options:

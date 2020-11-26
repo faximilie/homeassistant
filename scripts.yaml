@@ -52,25 +52,11 @@ ac_toggle:
       data:
         entity_id: climate.44054805840d8ea4bd2a
         hvac_mode: '{{ "auto" if states("climate.44054805840d8ea4bd2a") == "off" else "off"}}'
-    # Set tracker to last known if it's just turned on
-    # AC tracking is off but AC is on
-    # - service: input_select.select_option
-    #   data:
-    #     option: '{{ states("input_select.last_ac_scene") if not states("input_select.ac_on") and states("climate.44054805840d8ea4bd2a" == "auto") else "Off"}}'
-    #   entity_id: input_select.ac_scene
     # Set the tracker variable
     - service: input_select.select_option
       data:
         option: '{{ True if states("climate.44054805840d8ea4bd2a") == "auto" else False}}'
       entity_id: input_select.ac_on
-    # - service: input_select.select_option
-    #   data:
-    #     option: '{{ states("input_select.ac_scene") if states("climate.44054805840d8ea4bd2a") == "off" else states("input_select.last_ac_scene")}}'
-    #   entity_id: input_select.last_ac_scene
-    - service: input_select.select_option
-      data:
-        option: '{{ states("input_select.ac_scene") if states("input_select.ac_on") else states("input_select.ac_scene")|join("_last")}}'
-      entity_id: input_select.ac_scene
 # ac_Fan:
 #   alias: AC Fan
 #   icon: "hass:fan"
