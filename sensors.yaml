@@ -1,0 +1,15 @@
+- platform: min_max
+  name: "Faxy's Room Temp"
+  entity_ids:
+    - sensor.faxy_s_room_temperature
+    - sensor.faxy_s_room_temperature_2
+  type: mean
+- platform: min_max
+  name: "Faxy's Room Humidity"
+  entity_ids:
+    - sensor.faxy_s_room_humidity
+    - sensor.faxy_s_room_humidity_2
+  type: mean
+- platform: statistics
+  entity_id: sensor.esp32_hall_sensor
+  name: "Faxy's Door"
