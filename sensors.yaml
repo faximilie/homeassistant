@@ -3,13 +3,26 @@
   entity_ids:
     - sensor.faxy_s_room_temperature
     - sensor.faxy_s_room_temperature_2
-  type: mean
+  type: median
 - platform: min_max
   name: "Faxy's Room Humidity"
   entity_ids:
     - sensor.faxy_s_room_humidity
     - sensor.faxy_s_room_humidity_2
-  type: mean
+  type: median
 - platform: statistics
-  entity_id: sensor.esp32_hall_sensor
   name: "Faxy's Door"
+  entity_id: sensor.esp32_hall_sensor
+  sampling_size: 50
+- platform: statistics
+  entity_id: sensor.faxy_s_mi_band
+  name: "MiBand1"
+- platform: statistics
+  entity_id: sensor.faxy_s_mi_band_2
+  name: "MiBand2"
+- platform: min_max
+  name: "Mi Band"
+  entity_ids:
+    - sensor.miband1
+    - sensor.miband2
+  type: max
