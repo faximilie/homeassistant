@@ -121,7 +121,7 @@ climate:
     name: Faxys room
     heater: switch.aircon_heat
     cooler: switch.aircon_cool
-    target_sensor: sensor.faxy_s_room_temperature
+    target_sensor: sensor.faxy_s_room_temp
 
 tuya:
   username: !secret tuya_username
