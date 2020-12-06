@@ -77,8 +77,10 @@ light:
   - platform: group
     name: Faxys Room Lights
     entities:
-      - light.faxys_desk_lights
-      - light.faxys_bed_lights
+      - light.23150503f4cfa251950a
+      - light.56857605d8bfc0dc91e7
+      - light.56857605d8bfc0dcc9b7
+      - light.23150503a4cf12e3c5a1
   - platform: group
     name: Faxys Desk Lights
     entities:
