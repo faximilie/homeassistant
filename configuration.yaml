@@ -93,9 +93,11 @@ light:
       - light.23150503a4cf12e3c5a1
 
 switch:
-  - platform: flux
+  - entity_id: flux_switch
+    platform: flux
     lights:
       - light.faxys_room_lights
+    mode: mired
   - platform: template
     switches:
       aircon_cool:
