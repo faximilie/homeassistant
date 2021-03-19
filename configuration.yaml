@@ -17,30 +17,7 @@ scene: !include scenes.yaml
 
 
 history:
-  exclude:
-    entity_globs:
-     - sensor.oneplus_*
-     - sensor.faxy_s_phone*
-     - binary_sensor.oneplus_*
-     - binary_sensor.faxy_s_phone*
-     - person.faxy
-     - sensor.faxy
-     - device_tracker*
 recorder:
-
-input_select:
-  ac_scene:
-    name: AC Mode
-    options:
-      - Heat
-      - Cool
-      - Dry
-      - Fan
-  ac_on:
-    name: AC power
-    options:
-      - On
-      - Off
 
 vacuum:
   - platform: xiaomi_miio
@@ -72,80 +49,6 @@ device_tracker:
     consider_home: 360
     new_device_defaults:
       track_new_devices: false
-
-light:
-  - platform: group
-    name: Faxys Room Lights
-    entities:
-      - light.23150503f4cfa251950a
-      - light.56857605d8bfc0dc91e7
-      - light.56857605d8bfc0dcc9b7
-      - light.23150503a4cf12e3c5a1
-  - platform: group
-    name: Faxys Desk Lights
-    entities:
-      - light.23150503f4cfa251950a
-      - light.56857605d8bfc0dc91e7
-  - platform: group
-    name: Faxys Bed Lights
-    entities:
-      - light.56857605d8bfc0dcc9b7
-      - light.23150503a4cf12e3c5a1
-
-switch:
-  - entity_id: flux_switch
-    platform: flux
-    lights:
-      - light.faxys_room_lights
-    mode: mired
-  - platform: template
-    switches:
-      aircon_cool:
-        value_template: '{{is_state("input_select.ac_scene", "Cool") and is_state("climate.44054805840d8ea4bd2a", "auto")}}'
-        turn_on:
-          service: script.ac_cool
-        turn_off:
-          service: climate.set_hvac_mode
-          data:
-            entity_id: climate.44054805840d8ea4bd2a
-            hvac_mode: 'off'
-      aircon_heat:
-        value_template: '{{is_state("input_select.ac_scene", "Heat") and is_state("climate.44054805840d8ea4bd2a", "auto")}}'
-        turn_on:
-          service: script.ac_heat
-        turn_off:
-          service: climate.set_hvac_mode
-          data:
-            entity_id: climate.44054805840d8ea4bd2a
-            hvac_mode: 'off'
-      aircon_dry:
-        value_template: '{{is_state("input_select.ac_scene", "Dry" and is_state("climate.44054805840d8ea4bd2a", "auto"))}}'
-        turn_on:
-          service: script.ac_dry
-        turn_off:
-          service: climate.set_hvac_mode
-          data:
-            entity_id: climate.44054805840d8ea4bd2a
-            hvac_mode: 'off'
-      aircon_power:
-        value_template: '{{is_state("climate.44054805840d8ea4bd2a", "auto")}}'
-        turn_on:
-          service: climate.set_hvac_mode
-          data:
-            entity_id: climate.44054805840d8ea4bd2a
-            hvac_mode: 'auto'
-        turn_off:
-          service: climate.set_hvac_mode
-          data:
-            entity_id: climate.44054805840d8ea4bd2a
-            hvac_mode: 'off'
-
-climate:
-  - platform: dualmode_generic
-    name: Faxys room
-    heater: switch.aircon_heat
-    cooler: switch.aircon_cool
-    target_sensor: sensor.faxy_s_room_temp
 
 tuya:
   username: !secret tuya_username
