@@ -21,11 +21,11 @@ recorder:
 
 vacuum:
   - platform: xiaomi_miio
-    host: 192.168.1.108
+    host: 192.168.1.105
     token: !secret xiaomi_vacuum_token
 camera:
   - platform: xiaomi_cloud_map_extractor
-    host: 192.168.1.108
+    host: 192.168.1.105
     token: !secret xiaomi_vacuum_token
     username: !secret xiaomi_cloud_username
     password: !secret xiaomi_cloud_password
